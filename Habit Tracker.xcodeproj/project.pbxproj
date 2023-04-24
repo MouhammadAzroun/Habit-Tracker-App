@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6198260429F6E2670096DF62 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198260329F6E2670096DF62 /* Habit.swift */; };
+		6198260629F6EB7D0096DF62 /* HabitListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198260529F6EB7D0096DF62 /* HabitListVM.swift */; };
 		61C7012429F5B51D0089349A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61C7012329F5B51D0089349A /* GoogleService-Info.plist */; };
 		61C7012729F5B5EF0089349A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 61C7012629F5B5EF0089349A /* FirebaseAuth */; };
 		61C7012929F5B5EF0089349A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 61C7012829F5B5EF0089349A /* FirebaseFirestore */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6198260329F6E2670096DF62 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		6198260529F6EB7D0096DF62 /* HabitListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListVM.swift; sourceTree = "<group>"; };
 		61C7012329F5B51D0089349A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61EE95E029F5AED3000E3F30 /* Habit Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61EE95E329F5AED3000E3F30 /* Habit_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit_TrackerApp.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 				61EE95E529F5AED3000E3F30 /* ContentView.swift */,
 				61EE95E729F5AED4000E3F30 /* Assets.xcassets */,
 				61EE95E929F5AED4000E3F30 /* Preview Content */,
+				6198260329F6E2670096DF62 /* Habit.swift */,
+				6198260529F6EB7D0096DF62 /* HabitListVM.swift */,
 			);
 			path = "Habit Tracker";
 			sourceTree = "<group>";
@@ -155,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6198260429F6E2670096DF62 /* Habit.swift in Sources */,
 				61EE95E629F5AED3000E3F30 /* ContentView.swift in Sources */,
 				61EE95E429F5AED3000E3F30 /* Habit_TrackerApp.swift in Sources */,
+				6198260629F6EB7D0096DF62 /* HabitListVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
