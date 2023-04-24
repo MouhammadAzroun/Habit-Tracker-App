@@ -62,13 +62,76 @@ struct SigningIn: View {
 }
 
 struct MainView: View {
+    let db = Firestore.firestore()
+    @StateObject var habitListVM = HabitListVM()
+    @State var showingAddAlert = false
+    @State var newHabitName = ""
+    
     var body: some View {
         ZStack{
-            Color(red: 60/365, green: 160/365, blue: 245/365)
-                .ignoresSafeArea()
             VStack{
-                Text("Signed in")
+                List {
+                    ForEach(habitListVM.habits) { habit in
+                        RowView(habit: habit, vm: habitListVM)
+                    }
+                    .onDelete() { indexSet in
+                        for index in indexSet {
+                            habitListVM.delete(index: index)
+                        }
+                    }
+                }
             }
+            VStack{
+                Spacer()
+                HStack{
+                    Spacer()
+                    Button(action: {
+                        showingAddAlert = true
+                    }, label: {
+                        Image(systemName: "plus.circle.fill")
+                            .resizable()
+                    })
+                    .frame(width: 50, height: 50)
+                    .offset(x: -25)
+                    .alert("Add habit",isPresented: $showingAddAlert) {
+                        TextField("Habits name", text: $newHabitName)
+                        Button(action: {
+                            showingAddAlert = false
+                        }, label: {
+                            Text("Cancel")
+                        })
+                        
+                        Button(action: {
+                            habitListVM.saveToFireStore(habitName: newHabitName)
+                            newHabitName = ""
+                        }, label: {
+                            Text("Add habit")
+                        })
+                    }
+                }
+            }
+        }
+        .onAppear{
+            habitListVM.listenToFireStore()
+        }
+    }
+}
+
+struct RowView: View {
+    let habit: Habit
+    let vm: HabitListVM
+    
+    var body: some View {
+        HStack{
+            Text(habit.name)
+            
+            Spacer()
+            
+            Button(action: {
+                vm.toggel(habit: habit)
+            }, label: {
+                Image(systemName: habit.done ? "checkmark.square" : "square")
+            })
         }
     }
 }
