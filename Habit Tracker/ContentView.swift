@@ -127,6 +127,10 @@ struct RowView: View {
             
             Spacer()
             
+            Text("\(habit.streak) days in a row")
+            
+            Spacer()
+            
             Button(action: {
                 vm.toggel(habit: habit)
             }, label: {
@@ -138,6 +142,6 @@ struct RowView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainView()
     }
 }
