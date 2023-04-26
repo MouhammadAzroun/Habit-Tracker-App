@@ -29,6 +29,12 @@ class HabitListVM : ObservableObject {
         
         if let id = habit.id{
             habitsRef.document(id).updateData(["done" : !habit.done])
+            
+            if !habit.done{
+                habitsRef.document(id).updateData(["streak": FieldValue.increment(Int64(1))])
+            }else {
+                habitsRef.document(id).updateData(["streak": FieldValue.increment(Int64(-1))])
+            }
         }
     }
     
