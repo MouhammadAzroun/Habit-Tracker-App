@@ -13,4 +13,5 @@ struct Habit: Codable, Identifiable {
     var name: String
     var done: Bool = false
     var streak: Int = 0
+    var latestdate : Date
 }

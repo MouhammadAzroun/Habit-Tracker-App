@@ -22,6 +22,7 @@ struct ContentView: View {
 
 struct SigningIn: View {
     @Binding var signedIn: Bool
+    @StateObject var habitListVM = HabitListVM()
     var auth = Auth.auth()
     
     var body: some View {
